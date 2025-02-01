@@ -1,0 +1,47 @@
+.rate > input {
+    display: none; /* Hide the radio buttons */
+}
+
+.rate {
+    display: inline-block;
+    border: 0;
+}
+
+.rate > label {
+    float: right;
+    font-size: 2rem;  /* Increase size for visibility */
+    color: #ccc; /* Default color for unselected stars */
+    cursor: pointer;
+}
+
+.rate > label:before {
+    content: "\f005"; /* Unicode for filled star */
+    font-family: "Font Awesome 5 Free";  /* Ensure correct FontAwesome family */
+    font-weight: 900; /* Required to ensure icon is bold */
+}
+
+.rate > input:checked ~ label:before {
+    color: #f39c12; /* Gold color for filled stars */
+}
+
+.rate > input:checked + label ~ label {
+    color: #f39c12; /* Color change for all stars after selection */
+}
+
+
+.rate .half:before {
+    content: "\f089"; /* Unicode for half-star */
+    position: absolute;
+    padding-right: 0;
+}
+
+input:checked ~ label,label:hover ~ label{
+    color: #f39c12;
+}
+
+
+input:checked + label:hover,input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+    columns: #cc9000;
+
+}
